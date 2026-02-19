@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>糖心视频Vlog Demo</title>
+</head>
+<body>
+  <h1>糖心视频Vlog SDK Demo</h1>
+
+  <video id="player" width="600" controls></video>
+
+  <br><br>
+
+  <button onclick="loadVideo()">加载视频</button>
+  <button onclick="switchQuality()">切换清晰度</button>
+
+  <script src="../sdk/tangxin-vlog-sdk.js"></script>
+  <script>
+    const player = document.getElementById("player");
+    const sdk = new TangxinVlogSDK(player);
+
+    function loadVideo() {
+      sdk.load("https://www.w3schools.com/html/mov_bbb.mp4");
+      sdk.play();
+    }
+
+    function switchQuality() {
+      sdk.switchQuality("https://www.w3schools.com/html/movie.mp4");
+    }
+  </script>
+</body>
+</html>
